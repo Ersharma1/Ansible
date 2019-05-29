@@ -1,4 +1,4 @@
-ansible <HOST> -b -m <MODULE> -a "<ARG1 ARG2 ARG3>"
+Syntex:: ansible <HOST> -b -m <MODULE> -a "<ARG1 ARG2 ARG3>"
 
 Example::  ansible TestServer2 -b -m apt -a "name=apache2 state=latest" ##Installing apache package
 
