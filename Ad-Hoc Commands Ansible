@@ -1,3 +1,14 @@
 ansible <HOST> -b -m <MODULE> -a "<ARG1 ARG2 ARG3>"
 
-Example::  ansible TestServer2 -b -m apt -a "name=apache2 state=latest"
+Example::  ansible TestServer2 -b -m apt -a "name=apache2 state=latest" ##Installing apache package
+
+HOST: host is a host or group of host defined in ansible inventory file "/etc/ansible/hosts"
+-b: is to become, switch user to root privilages 
+-m : is for modules, that needs to be used
+-a: allows parameters to pass arguments for modules
+
+
+Example2:: ansible TestServer2 -m setup ##Display system info on remote machine
+
+
+ansible-doc -l    ##Give the list of modules available for ansible
