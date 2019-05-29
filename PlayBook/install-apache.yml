@@ -1,0 +1,20 @@
+--- #Bootstrap Webservers
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Install Apache2
+    apt:
+      name: apache2
+      state: latest
+  - name: create test.html file
+    file:
+      name: /var/www/html/test.html
+      state: touch
+  - name: add web content
+    lineinfile:
+       line: "Welcome to Ansible test playbook for install apache"
+       path: /var/www/html/test.html
+  - name: start apache2
+    service:
+      name: apache2
+      state: started
