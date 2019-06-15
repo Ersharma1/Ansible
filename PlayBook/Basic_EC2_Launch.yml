@@ -1,0 +1,16 @@
+---
+- name: ec2 launch
+  hosts: localhost
+  connection: local
+  tasks:
+          - name: Launching EC2 instance
+            ec2:
+                    instance_type: t2.micro
+                    key_name: Rahul
+                    image: ami-0653e888ec96eab9b
+                    region: us-east-2
+                    group: default
+                    count: 1
+                    vpc_subnet_id: subnet-e5d878a9
+                    wait: yes
+                    assign_public_ip: yes
