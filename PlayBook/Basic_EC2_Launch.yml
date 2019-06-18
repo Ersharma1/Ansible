@@ -14,3 +14,5 @@
                     vpc_subnet_id: subnet-e5d878a9
                     wait: yes
                     assign_public_ip: yes
+                    instance_tag:
+                      Name: Test-Server
